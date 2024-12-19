@@ -17,9 +17,9 @@ pipeline {
             }
         }
         
-        stage('Compile on slave) {
+        stage('Compile on slave1') {
             agent {
-                label 'slave'
+                label 'slave1'
             }
             steps {
                 echo 'Compiling...'
@@ -37,9 +37,9 @@ pipeline {
             }
         }
         
-        stage('UnitTest on slave') {
+        stage('UnitTest on slave1') {
             agent {
-                label 'slave'
+                label 'slave1'
             }
             steps {
                 echo 'Testing...'
