@@ -39,7 +39,7 @@ pipeline {
         
         stage('UnitTest on slave1') {
             agent {
-                label 'slave1'
+                label 'master'
             }
             steps {
                 echo 'Testing...'
