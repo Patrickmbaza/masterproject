@@ -13,13 +13,13 @@ pipeline {
             }
             steps {
                 echo 'Cloning...'
-                git 'https://github.com/RayItern/masterproject.git'
+                git 'https://github.com/Patrickmbaza/masterproject.git'
             }
         }
         
-        stage('Compile on slave1) {
+        stage('Compile on slave) {
             agent {
-                label 'slave1'
+                label 'slave'
             }
             steps {
                 echo 'Compiling...'
@@ -27,9 +27,9 @@ pipeline {
             }
         }
         
-        stage('CodeReview on slave1') {
+        stage('CodeReview on master') {
             agent {
-                label 'slave1'
+                label 'master'
             }
             steps {
                 echo 'Code Review...'
@@ -37,9 +37,9 @@ pipeline {
             }
         }
         
-        stage('UnitTest on slave1') {
+        stage('UnitTest on slave') {
             agent {
-                label 'slave1'
+                label 'slave'
             }
             steps {
                 echo 'Testing...'
