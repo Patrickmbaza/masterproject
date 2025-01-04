@@ -27,7 +27,7 @@ pipeline {
             }
         }
         
-        stage('CodeReview on master') {
+        stage('CodeReview on slave2') {
             agent {
                 label 'master'
             }
